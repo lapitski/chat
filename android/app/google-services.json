@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "870782280308",
+    "firebase_url": "https://chat-flutt.firebaseio.com",
+    "project_id": "chat-flutt",
+    "storage_bucket": "chat-flutt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870782280308:android:222a75ef777982e459a721",
+        "android_client_info": {
+          "package_name": "com.example.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870782280308-prdjb5bjiesg62833i1jcd3b6kjj69ah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7zMHs2jsMsFDYK9pn3KA7Txe9GgDIYfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870782280308-prdjb5bjiesg62833i1jcd3b6kjj69ah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
