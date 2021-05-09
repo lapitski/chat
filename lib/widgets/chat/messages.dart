@@ -7,7 +7,7 @@ class Messages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var user = FirebaseAuth.instance.currentUser;
-    return StreamBuilder(
+    return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
           .collection('chat')
           .orderBy('createdAt', descending: true)
@@ -28,7 +28,7 @@ class Messages extends StatelessWidget {
                 chatDocs[index]['userId'] == user.uid ? true : false,
                 chatDocs[index]['username'],
                 chatDocs[index]['userImage'],
-                key: ValueKey(chatDocs[index].documentID),
+                key: ValueKey(chatDocs[index].id),
               );
             });
       },

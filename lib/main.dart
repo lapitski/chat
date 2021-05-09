@@ -15,13 +15,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  Future<FirebaseApp> _initialization;
+  @override
+  void initState() {
+    super.initState();
+    _initialization = Firebase.initializeApp();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Chat',
         theme: ThemeData(
           primarySwatch: Colors.purple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
