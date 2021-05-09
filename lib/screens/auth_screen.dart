@@ -78,10 +78,14 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Family Chat'),
+        title: Text('Authentication'),
         actions: [
           DropdownButton(
-            icon: Icon(Icons.more_vert),
+            icon: Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
+            underline: Container(),
             items: [
               DropdownMenuItem(
                 child: Container(
@@ -106,7 +110,7 @@ class _AuthScreenState extends State<AuthScreen> {
           )
         ],
       ),
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: AuthForm(_submitAuthForm, _isLoading),
     );
   }

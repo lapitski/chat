@@ -8,19 +8,19 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.purple[100],
         accentColor: Colors.deepPurple,
         accentColorBrightness: Brightness.dark,
         buttonTheme: ButtonTheme.of(context).copyWith(
-            buttonColor: Colors.pink,
+            buttonColor: Colors.purple,
             textTheme: ButtonTextTheme.primary,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             ))),
       ),
       home: StreamBuilder(
-        stream: FirebaseAuth.instance.onAuthStateChanged,
+        stream: FirebaseAuth.instance.authStateChanges(),
         builder: (ctx, userSnapShot) {
           if (userSnapShot.hasData) {
             return ChatScreen();

@@ -40,7 +40,8 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text('Family Chat'),
         actions: [
           DropdownButton(
-            icon: Icon(Icons.more_vert),
+            underline: Container(),
+            icon: Icon(Icons.more_vert, color: Colors.white),
             items: [
               DropdownMenuItem(
                 child: Container(

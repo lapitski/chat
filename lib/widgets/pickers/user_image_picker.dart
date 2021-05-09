@@ -15,7 +15,7 @@ class _UserImagePickerState extends State<UserImagePicker> {
   File _pickedImage;
   void _pickImage() async {
     final pickedImageFile = await picker.getImage(
-      source: ImageSource.camera,
+      source: ImageSource.gallery,
       imageQuality: 50,
       maxWidth: 150,
     );
@@ -30,15 +30,16 @@ class _UserImagePickerState extends State<UserImagePicker> {
     return Column(
       children: [
         CircleAvatar(
-          radius: 40,
+          radius: 60,
           backgroundColor: Colors.grey,
-          backgroundImage:
-              _pickedImage != null ? FileImage(_pickedImage) : null,
+          backgroundImage: _pickedImage != null
+              ? FileImage(_pickedImage)
+              : AssetImage('assets/profile.png'),
         ),
         FlatButton.icon(
           textColor: Theme.of(context).primaryColor,
           onPressed: _pickImage,
-          icon: Icon(Icons.image),
+          icon: Icon(Icons.camera_enhance),
           label: Text('Add photo'),
         ),
       ],
