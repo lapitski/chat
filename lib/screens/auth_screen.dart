@@ -23,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
     bool isLogin,
     BuildContext ctx,
   ) async {
-    AuthResult authresult;
+    UserCredential authresult;
     try {
       setState(() {
         _isLoading = true;
@@ -42,12 +42,12 @@ class _AuthScreenState extends State<AuthScreen> {
             .ref()
             .child('user_images')
             .child(authresult.user.uid + '.jpg');
-        await ref.putFile(userImage).onComplete;
+        await ref.putFile(userImage).whenComplete(() => null);
         final url = await ref.getDownloadURL();
-        await Firestore.instance
+        await FirebaseFirestore.instance
             .collection('users')
-            .document(authresult.user.uid)
-            .setData({
+            .doc(authresult.user.uid)
+            .set({
           'username': username,
           'email': email,
           'image_url': url,
